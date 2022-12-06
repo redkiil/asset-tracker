@@ -18,7 +18,7 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Test
-        run: dotnet test --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=../../coverage /p:CoverletOutputFormat="opencover"
+        run: dotnet test --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=~/github/workspace/coverage.opencover.xml /p:CoverletOutputFormat="opencover"
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
