@@ -1,3 +1,6 @@
-*/bin
-*/obj
+**/bin
+**/obj
 FleetApi.Api/appsettings.json
+.vs
+.vscode
+coveragereport

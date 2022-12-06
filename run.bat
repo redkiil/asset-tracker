@@ -1,1 +1,1 @@
-dotnet run --project FleetApi.Api
+dotnet watch --project FleetApi.Api
