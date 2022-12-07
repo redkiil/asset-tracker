@@ -2,9 +2,9 @@
 <CoverageSession>
   <Summary numSequencePoints="134" visitedSequencePoints="103" numBranchPoints="16" visitedBranchPoints="8" sequenceCoverage="76.86" branchCoverage="50" maxCyclomaticComplexity="42" minCyclomaticComplexity="16" visitedClasses="11" numClasses="15" visitedMethods="32" numMethods="45" />
   <Modules>
-    <Module hash="5E781EB2-5BD5-4B43-B200-297D0ED7FB83">
+    <Module hash="147AD47D-57D6-4DA8-9D91-171E58D6B4F2">
       <ModulePath>FleetApi.Data.dll</ModulePath>
-      <ModuleTime>2022-12-04T09:13:31</ModuleTime>
+      <ModuleTime>2022-12-06T04:52:14</ModuleTime>
       <ModuleName>FleetApi.Data</ModuleName>
       <Files>
         <File uid="1" fullPath="D:\PROJETOS\dashboard-esp32\backend\src\FleetApi.Data\Repositories\EquipmentRepository.cs" />
@@ -316,9 +316,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="FB892190-E71A-4B9E-897F-05DF14C13DCE">
+    <Module hash="E631E13E-61C9-4539-B96A-435EFF523CEF">
       <ModulePath>FleetApi.Domain.dll</ModulePath>
-      <ModuleTime>2022-12-04T09:13:32</ModuleTime>
+      <ModuleTime>2022-12-06T04:52:14</ModuleTime>
       <ModuleName>FleetApi.Domain</ModuleName>
       <Files>
         <File uid="7" fullPath="D:\PROJETOS\dashboard-esp32\backend\src\FleetApi.Domain\Entities\Employee.cs" />

@@ -2,9 +2,9 @@
 <CoverageSession>
   <Summary numSequencePoints="61" visitedSequencePoints="45" numBranchPoints="16" visitedBranchPoints="15" sequenceCoverage="73.77" branchCoverage="93.75" maxCyclomaticComplexity="42" minCyclomaticComplexity="42" visitedClasses="3" numClasses="4" visitedMethods="17" numMethods="29" />
   <Modules>
-    <Module hash="51D1C8FB-EA4E-4B37-99C3-FDCDF8B65901">
+    <Module hash="60264770-90EF-457E-AAC5-1369FAF81446">
       <ModulePath>FleetApi.Domain.dll</ModulePath>
-      <ModuleTime>2022-12-04T09:13:32</ModuleTime>
+      <ModuleTime>2022-12-06T04:52:12</ModuleTime>
       <ModuleName>FleetApi.Domain</ModuleName>
       <Files>
         <File uid="1" fullPath="D:\PROJETOS\dashboard-esp32\backend\src\FleetApi.Domain\Entities\Employee.cs" />
