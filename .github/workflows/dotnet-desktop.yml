@@ -22,7 +22,7 @@ jobs:
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
-          filename: tests/FleetApi.Data.Tests/coverage.opencover.xml
+          filename: asset-tracker/asset-tracker/tests/**/*.opencover.xml
           badge: true
           fail_below_min: true
           format: markdown
