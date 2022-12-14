@@ -18,10 +18,10 @@ namespace FleetApi.Application.CQRS.EquipmentAdapter.Handlers
             var equipment = await _repository.GetByIdAsync(request.Fleet);
             if(equipment == null)
             {
-                throw new ApplicationException($"Entity could not be loaded!");
+                return Result.Fail("Equipment invalid");
             }else{
-                //equipment.Update(request.Fleet, request.Model, request.ModelYear, request.GroupId, request.EmployeeBadge, request.Position, request.Lastime, request.Data, request.EquipType);
-                return await _repository.UpdateAsync(equipment);
+                var result = await _repository.UpdateAsync(equipment);
+                return Result.Ok(result);
             }
         }
     }

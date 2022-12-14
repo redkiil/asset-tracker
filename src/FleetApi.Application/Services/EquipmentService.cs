@@ -13,12 +13,13 @@ namespace FleetApi.Application.Services
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+        private readonly ILocalizerService _localizerService;
 
-        public EquipmentService(IMediator mediator, IMapper mapper)
+        public EquipmentService(IMediator mediator, IMapper mapper, ILocalizerService localizerService)
         {
             _mediator = mediator;
             _mapper = mapper;
-
+            _localizerService = localizerService;
         }
         public async Task<Result<EquipmentDTO>> Add(EquipmentDTO equipmentDto)
         {
@@ -41,7 +42,18 @@ namespace FleetApi.Application.Services
             if(equipments == null)
                 throw new ApplicationException($"Failed to load equipments query");
             var result = await _mediator.Send(equipments);
-            return _mapper.Map<IEnumerable<EquipmentDTO>>(result);
+            var equipmentResult = _mapper.Map<IEnumerable<EquipmentDTO>>(result);
+            var tasks = new List<Task<EquipmentDTO>>();
+            foreach (var equipment in equipmentResult)
+            {
+                var response = Task.Run<EquipmentDTO>(() => {
+                    equipment.Location = _localizerService.GetLocalization(equipment.Position);
+                    return equipment;
+                });
+                tasks.Add(response);
+            }
+            await Task.WhenAll(tasks);
+            return equipmentResult;
         }
 
         public async Task<EquipmentDTO> GetBy(int? fleet)

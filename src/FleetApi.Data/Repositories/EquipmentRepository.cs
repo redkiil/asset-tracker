@@ -17,11 +17,8 @@ namespace FleetApi.Data.Repositories
         
         public async Task<IEnumerable<Equipment>> GetAllAsync()
         {
-            var watch = Stopwatch.StartNew();
             var equips = await _context.equipments.Include(e => e.Group).Include(e => e.Employee).ToListAsync();
-            watch.Stop();
 
-            Console.WriteLine("Time: {0}", watch.ElapsedMilliseconds);
             return equips;
         }
 
@@ -31,7 +28,7 @@ namespace FleetApi.Data.Repositories
         }
         public async Task<Equipment> CreateAsync(Equipment equipment)
         {
-            _context.Add(equipment);
+            _context.equipments.Add(equipment);
             await _context.SaveChangesAsync();
             return equipment;
         }
@@ -44,9 +41,9 @@ namespace FleetApi.Data.Repositories
         }
         public async Task<Equipment> UpdateAsync(Equipment equipment)
         {
-            _context.Update(equipment);
+            var result = _context.equipments.Update(equipment);
             await _context.SaveChangesAsync();
-            return equipment;
+            return result.Entity;
         }
     }
 }

@@ -16,15 +16,20 @@ namespace FleetApi.Application.Tests.Services;
 public class EquipmentServiceTest{
     
     Mock<IMediator> _mediator;
+    Mock<ILocalizerService> _locationService;
     IMapper _mapper;
     IEquipmentService _equipmentService;
+
     
     public EquipmentServiceTest()
     {
         _mediator = new Mock<IMediator>();
+        _locationService = new Mock<ILocalizerService>();
+        _locationService.Setup(x => x.GetLocalization(It.IsAny<Position>())).Returns(new Location(){});
         var configuration = new MapperConfiguration(cfg => cfg.AddProfile(new DTOToCmdMapProfile()));
         _mapper = new Mapper(configuration);
-        _equipmentService = new EquipmentService(_mediator.Object, _mapper);
+
+        _equipmentService = new EquipmentService(_mediator.Object, _mapper, _locationService.Object);
 
     }
     [Fact]

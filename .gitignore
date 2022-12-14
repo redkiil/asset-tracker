@@ -4,4 +4,4 @@ FleetApi.Api/appsettings.json
 .vs
 .vscode
 coveragereport
-tests/**
+tests/**/coverage.cobertura.xml

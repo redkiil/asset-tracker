@@ -28,7 +28,7 @@ namespace FleetApi.IoC
 
             services.AddSingleton<ILocalizerService, LocalizerService>();
 
-            services.AddSingleton<IMapLoader, MapLoader>();
+            services.AddSingleton<IMapLoader>(p => new MapLoader("D:/PROJETOS/dashboard-esp32/backend/src/FleetApi.Data/Static/map.geojson"));
 
             services.AddAutoMapper(typeof(DomainToDTOMapProfile));
 

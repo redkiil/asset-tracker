@@ -19,10 +19,14 @@
     </PackageReference>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.NetTopologySuite" Version="6.0.1" />
+    <PackageReference Include="GeoJSON.Net" Version="1.2.19" />
+    <PackageReference Include="GeoJSON.Net.Contrib.MsSqlSpatial" Version="0.3.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FleetApi.Domain\FleetApi.Domain.csproj" />
+    <ProjectReference Include="..\FleetApi.Application\FleetApi.Application.csproj" />
+
   </ItemGroup>
 
 </Project>

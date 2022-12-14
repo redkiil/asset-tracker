@@ -7,13 +7,13 @@ namespace FleetApi.Application.CQRS.EquipmentAdapter.Commands
 {
     public abstract class EquipmentCommand : IRequest<Result<Equipment>>
     {
-        public short Fleet {get;private set;}
-        public string Model {get;private set;}
-        public string EquipType {get;private set;}
-        public short ModelYear {get;private set;}
-        public Position Position {get; private set;}
-        public DateTime Lastime {get; private set;}
-        public short EmployeeBadge {get; private set;}
+        public short Fleet {get; set;}
+        public string Model {get; set;}
+        public string EquipType {get; set;}
+        public short ModelYear {get; set;}
+        public Position Position {get;  set;}
+        public DateTime Lastime {get;  set;}
+        public short EmployeeBadge {get;  set;}
         public int GroupId {get;set;}
         public string Data {get;set;}
     }

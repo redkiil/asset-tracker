@@ -18,6 +18,18 @@ namespace FleetApi.Domain.Entities
         public int GroupId {get;set;}
         public Group Group {get;set;}
         public string Data {get;private set;} = "{}";
+        public Equipment(int id, short fleet, string model, short modelYear, int groupId, short employeeBadge, string equipType, string data, Position pos)
+        {
+            Id = id;
+            Fleet = fleet;
+            Model = model;
+            ModelYear = modelYear;
+            EquipType = equipType;
+            EmployeeBadge = employeeBadge;
+            GroupId = groupId;
+            Data = data;
+            Position = pos;
+        }
         public Equipment(short fleet, string model, short modelYear, int groupId, short employeeBadge, string equipType, string data)
         {
             Fleet = fleet;
@@ -32,6 +44,11 @@ namespace FleetApi.Domain.Entities
         {
             var validationResult = Validation(fleet, model, modelYear, groupId, employeeBadge, equipType, data);
             return validationResult.IsFailed ? Result.Fail(validationResult.Errors) : Result.Ok(new Equipment(fleet, model, modelYear, groupId, employeeBadge, equipType, data));
+        }
+        public static Result<Equipment> Update(int id, short fleet, string model, short modelYear, int groupId, short employeeBadge, string equipType, string data, Position pos)
+        {
+            var validationResult = Validation(fleet, model, modelYear, groupId, employeeBadge, equipType, data);
+            return validationResult.IsFailed ? Result.Fail(validationResult.Errors) : Result.Ok(new Equipment(id, fleet, model, modelYear, groupId, employeeBadge, equipType, data, pos));
         }
         public static Result Validation(short fleet, string model, short modelYear, int groupId, short employeeBadge, string equipType, string data)
         {

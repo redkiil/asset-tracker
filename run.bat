@@ -1,1 +1,1 @@
-dotnet watch --project FleetApi.Api
+dotnet watch --project src/FleetApi.Api
